@@ -10,16 +10,17 @@
     />
     <text bindtap='canceltap'>取消</text>
   </view>
-  <swiper indicator-dots="{{true}}" autoplay="{{false}}">
-    <block wx:for="{{inputPic}}" wx:key="*this">
-      <swiper-item>
+  <view class='items'>
+    <block wx:for="{{inputPic}}" wx:key="{{index}}">
+      <view class='item'>
         <image src="{{item}}"></image>
-      </swiper-item>
+      </view>
     </block>
-  </swiper>
+  </view>
+  <view class='clear'></view>
   <view class='alert'>
     系统提示：目前题库还再更新中，很多字没有录入
   </view>
-  体验请输入：小明写作业了
+  体验用户请输入：一去二三里
 </view>
 

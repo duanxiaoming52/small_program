@@ -5,6 +5,11 @@
     <view class='title'>查字学写</view>
     <view class='intro'>查询字体样式和书写方式</view>
   </navigator>
+  <navigator url="/write/main">
+    <image src="../images/write.png"></image>
+    <view class='title'>写一写呀</view>
+    <view class='intro'>教你孩子写字，练习是提高书写的最好方式</view>
+  </navigator>
   <navigator url="/reckon/main">
     <image src="../images/reckon.png"></image>
     <view class='title'>数一数呀</view>

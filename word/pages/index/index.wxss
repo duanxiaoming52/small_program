@@ -1,7 +1,6 @@
 /* word/pages/index/index.wxss */
 .container{
   padding: 12rpx 30rpx;
-  height: 100%;
 }
 .container .search{
   margin-top: 12rpx;
@@ -12,6 +11,7 @@
 }
 .container .search input{
   background-color: #fff;
+  height: 48rpx;
 }
 .container .search text{
   position: absolute;
@@ -19,11 +19,17 @@
   top:0rpx;
   padding: 18rpx 24rpx;
 }
-.container swiper{
-  width: 690rpx;
-  height: 690rpx;
+.container .items{
+  min-height: 730rpx
 }
-.container swiper image{
+.container .items .item{
+  float:left;
+  width: 170rpx;
+  height: 170rpx;
+  margin-left:2rpx;
+  margin-bottom: 12rpx;
+}
+.container .items .item image{
   width: 100%;
   height: 100%;
 }

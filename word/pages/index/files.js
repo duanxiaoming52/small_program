@@ -1,8 +1,7 @@
 export default {
-  '小':'../../images/reckon.png',
-  '明':'../../images/reckon.png',
-  '写':'../../images/reckon.png',
-  '作':'../../images/word.png',
-  '业': '../../images/word.png',
-  '了': '../../images/word.png'
+  '一':'../../images/一.jpg',
+  '去':'../../images/去.jpg',
+  '二':'../../images/二.jpg',
+  '三':'../../images/三.jpg',
+  '里': '../../images/里.jpg'
 }
