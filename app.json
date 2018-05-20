@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/index/index",
+    "knife/main",
+    "reckon/main",
+    "word/pages/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  }
+}

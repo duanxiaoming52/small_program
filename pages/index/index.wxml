@@ -1,0 +1,13 @@
+<!--pages/index/index.wxml-->
+<view class='container'>
+  <navigator url="/word/pages/index/index">
+    <image src="../images/word.png"></image>
+    <view class='title'>查字学写</view>
+    <view class='intro'>查询字体样式和书写方式</view>
+  </navigator>
+  <navigator url="/reckon/main">
+    <image src="../images/reckon.png"></image>
+    <view class='title'>数一数呀</view>
+    <view class='intro'>教教孩子数数，增强思维逻辑性，正确理解数字</view>
+  </navigator>
+</view>

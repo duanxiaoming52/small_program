@@ -1,0 +1,25 @@
+<!--word/pages/index/index.wxml-->
+<view class='container'>
+  <view class='search'>
+    <input
+      value="{{inputValue}}"
+      placeholder="请输入要查询的字"
+      auto-focus="{{true}}"
+      bindfocus="bindfocus"
+      bindconfirm="bindconfirm"
+    />
+    <text bindtap='canceltap'>取消</text>
+  </view>
+  <swiper indicator-dots="{{true}}" autoplay="{{false}}">
+    <block wx:for="{{inputPic}}" wx:key="*this">
+      <swiper-item>
+        <image src="{{item}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='alert'>
+    系统提示：目前题库还再更新中，很多字没有录入
+  </view>
+  体验请输入：小明写作业了
+</view>
+

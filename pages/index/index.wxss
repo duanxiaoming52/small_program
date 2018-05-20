@@ -1,0 +1,21 @@
+/* pages/index/index.wxss */
+.container{
+  padding: 12rpx 30rpx;
+  height: 100%;
+}
+.container navigator{
+  padding:24rpx 0rpx;
+  border-bottom: solid 1px #ccc;
+}
+.container navigator image{
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 24rpx;
+  float: left;
+}
+.container navigator .title{
+  font-size: 36rpx;
+}
+.container navigator .intro{
+  color: #aaa;
+}
