@@ -10,7 +10,7 @@
     <view class='title'>写一写呀</view>
     <view class='intro'>教你孩子写字，练习是提高书写的最好方式</view>
   </navigator>
-  <navigator url="/reckon/main">
+  <navigator url="/number/main">
     <image src="../images/reckon.png"></image>
     <view class='title'>数一数呀</view>
     <view class='intro'>教教孩子数数，增强思维逻辑性，正确理解数字</view>

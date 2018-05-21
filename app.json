@@ -3,7 +3,7 @@
     "pages/index/index",
     "knife/main",
     "write/main",
-    "reckon/main",
+    "number/main",
     "word/pages/index/index"
   ],
   "window": {

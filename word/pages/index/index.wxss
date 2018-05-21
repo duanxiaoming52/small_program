@@ -12,12 +12,20 @@
 .container .search input{
   background-color: #fff;
   height: 48rpx;
+  padding: 0rpx 24rpx;
 }
-.container .search text{
+.container .search .cancel{
+  position: absolute;
+  right: 100rpx;
+  top:18rpx;
+  padding:2rpx 6rpx;
+  z-index: 1;
+}
+.container .search .submit{
   position: absolute;
   right: 0rpx;
-  top:0rpx;
-  padding: 18rpx 24rpx;
+  top:6rpx;
+  padding: 16rpx 24rpx;
 }
 .container .items{
   min-height: 730rpx

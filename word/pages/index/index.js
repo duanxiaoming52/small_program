@@ -64,13 +64,26 @@ Page({
   onShareAppMessage: function () {
   
   },
-  bindfocus:function(e){
-    console.log('bindfocus');
+  bindinput:function(e){
+    this.setData({
+      inputValue: e.detail.value
+    });
   },
   bindconfirm:function(e){
-    let value = e.detail.value;
+    this.search(e.detail.value);
+  },
+  canceltap:function(){
+    this.setData({
+      inputValue:'',
+      inputPic: []
+    });
+  },
+  submittap:function(){
+    this.search(this.data.inputValue);
+  },
+  search:function(value){
     if (value.length > 0) {
-      let key = '', str = '',pic=[];
+      let key = '', str = '', pic = [];
       for (let i = 0; i < value.length; i++) {
         key = value[i];
         if (files[key]) {
@@ -80,14 +93,8 @@ Page({
       }
       this.setData({
         inputValue: str,
-        inputPic:pic
+        inputPic: pic
       });
     }
-  },
-  canceltap:function(){
-    this.setData({
-      inputValue:'',
-      inputPic: []      
-    });
   }
 })

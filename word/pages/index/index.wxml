@@ -5,10 +5,12 @@
       value="{{inputValue}}"
       placeholder="请输入要查询的字"
       auto-focus="{{true}}"
-      bindfocus="bindfocus"
+      confirm-type="search"
+      bindinput="bindinput"
       bindconfirm="bindconfirm"
     />
-    <text bindtap='canceltap'>取消</text>
+    <text class='cancel' bindtap='canceltap'>x</text>
+    <text class='submit' bindtap='submittap'>确定</text>
   </view>
   <view class='items'>
     <block wx:for="{{inputPic}}" wx:key="{{index}}">

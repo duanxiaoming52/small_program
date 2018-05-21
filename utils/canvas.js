@@ -1,10 +1,14 @@
 import statics from './statics.js';
+
 const ctools = {
   getX(x) {
     return x / statics.gWidth * statics.innerWidth;
   },
-  getY(y) {
-    return y / statics.gHeight * statics.innerHeight;
+  getBaseX(x) {
+    return x / statics.innerWidth * statics.gWidth;
+  },
+  getBaseY() {
+    return statics.gWidth * statics.innerHeight / statics.innerWidth;
   },
   getAngle(x1, y1, x2, y2) {
     return 360 * Math.atan((x1 - x2) / (y1 - y2)) / (2 * Math.PI);
@@ -37,6 +41,9 @@ export class Canvas{
     this.ctx.lineWidth = lineWidth;
   }
   point(x, y, radius=4, color = "#000") {//话圆
+    x = ctools.getX(x);
+    y = ctools.getX(y);
+    radius = ctools.getX(radius);
     this.ctx.beginPath();
     this.ctx.strokeStyle = color;
     this.ctx.fillStyle = color;
@@ -61,11 +68,12 @@ export class Canvas{
     this.ctx.strokeStyle = color;
     this.ctx.arc(x, y, radius, 0, 2 * Math.PI);
   }
-  strokeRect(x, y, width, height) {
+  strokeRect(x, y, width, height, color = "#000") {
     x = ctools.getX(x);
     y = ctools.getX(y);
     width = ctools.getX(width);
     height = ctools.getX(height);
+    this.ctx.strokeStyle = color;
     this.ctx.strokeRect(x, y, width, height)
   }
   stroke(color = "#000") {//绘制线条
@@ -88,25 +96,19 @@ export class Canvas{
     this.ctx.fillText(text, x, y);
   }
 ////////////////////////////////////////////////////////////////////
-  drawMoveTo(x, y) {
-    x = ctools.getX(x);
-    y = ctools.getY(y);
-    this.ctx.moveTo(x, y);
-  }
-  drawLineDash(x, y) {
+  drawLineDash(x1, y1, x2, y2, color = '#000', lineWidth = 1) {
     //this.ctx.setLineDash([5,2]);
-    x = ctools.getX(x);
-    y = ctools.getY(y);
-    this.ctx.lineTo(x, y);
+    this.drawLine(x1, y1, x2, y2, color, lineWidth);
   }
-  drawLine(x, y) {
-    x = ctools.getX(x);
-    y = ctools.getY(y);
-    this.ctx.lineTo(x, y);
+  drawLine(x1, y1, x2, y2, color = '#000', lineWidth=1) {
+    this.beginPath(lineWidth);
+    this.moveTo(x1,y1);
+    this.lineTo(x2, y2);
+    this.stroke(color);
   }
   drawImage(src, x, y, width, height) {//绘制图片
     x = ctools.getX(x);
-    y = ctools.getY(y);
+    y = ctools.getX(y);
     width = ctools.getX(width);
     height = ctools.getX(height);
     this.ctx.drawImage(src, x, y, width, height);
@@ -124,7 +126,7 @@ export class Canvas{
   }
   clearRect(x, y, width, height) {
     x = ctools.getX(x);
-    y = ctools.getY(y);
+    y = ctools.getX(y);
     width = ctools.getX(width);
     height = ctools.getX(height);
     this.ctx.clearRect(x, y, width, height);
@@ -136,25 +138,39 @@ export class Canvas{
     this.ctx.draw();
   }
 }
-//点
+//矩形
 export class Rect {
   x = 0
   y = 0;
   width = 0;
-  height = 0
+  height = 0;
   constructor(x, y, width, height) {
     this.x = x;
     this.y = y;
     this.width = width;
     this.height = height;
   }
-  setX(x) {
-    this.x = x;
-  }
-  setY(y) {
-    this.y = y;
-  }
   isOnRect(spX,spY) {
+    if (!this.visible)
+      return false
+    // console.log(spX, spY, this.x, this.y, this.x + this.width, this.y + this.height);
+    return !!(spX >= this.x
+      && spX <= this.x + this.width
+      && spY >= this.y
+      && spY <= this.y + this.height)
+  }
+}
+
+export class Circle {
+  x = 0
+  y = 0;
+  radius = 0;
+  constructor(x, y, radius) {
+    this.x = x;
+    this.y = y;
+    this.radius = radius;
+  }
+  isOnCircle(spX, spY) {
     if (!this.visible)
       return false
     // console.log(spX, spY, this.x, this.y, this.x + this.width, this.y + this.height);
