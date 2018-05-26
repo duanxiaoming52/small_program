@@ -1,5 +1,6 @@
 // word/pages/index/index.js
 import files from './files.js';
+import statics from '../../../utils/statics.js';
 Page({
 
   /**
@@ -20,7 +21,9 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    statics.load(files, (res) => {
+      wx.hideLoading();
+    });
   },
 
   /**
@@ -78,7 +81,7 @@ Page({
       inputPic: []
     });
   },
-  submittap:function(){
+  submittap: function () {
     this.search(this.data.inputValue);
   },
   search:function(value){
@@ -88,7 +91,8 @@ Page({
         key = value[i];
         if (files[key]) {
           str += key;
-          pic.push(files[key]);
+          let picUrl = statics.getFile(key);
+          pic.push(picUrl);
         }
       }
       this.setData({

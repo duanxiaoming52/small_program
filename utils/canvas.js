@@ -1,4 +1,4 @@
-import statics from './statics.js';
+import statics from "./statics.js";
 
 const ctools = {
   getX(x) {
@@ -68,12 +68,11 @@ export class Canvas{
     this.ctx.strokeStyle = color;
     this.ctx.arc(x, y, radius, 0, 2 * Math.PI);
   }
-  strokeRect(x, y, width, height, color = "#000") {
+  strokeRect(x, y, width, height) {
     x = ctools.getX(x);
     y = ctools.getX(y);
     width = ctools.getX(width);
     height = ctools.getX(height);
-    this.ctx.strokeStyle = color;
     this.ctx.strokeRect(x, y, width, height)
   }
   stroke(color = "#000") {//绘制线条
@@ -160,7 +159,7 @@ export class Rect {
       && spY <= this.y + this.height)
   }
 }
-
+//圆
 export class Circle {
   x = 0
   y = 0;

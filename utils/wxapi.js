@@ -67,7 +67,10 @@ export default {
     wx.getStorage({
       key: key,
       success: success,
-      fail: fail
+      fail: fail,
+      complete:function(res){
+        //console.log(res);
+      }
     });
   },
   setStorage(key, data, success, fail) {

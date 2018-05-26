@@ -13,7 +13,7 @@ export default {
     if (url.indexOf("http") === 0) {
       return url;
     } else {
-      return config.apiHost + 'images/' + url;
+      return config.apiHost + url;
     }
   },
   getConfig(key) {
