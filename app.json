@@ -8,8 +8,8 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarBackgroundColor": "#D7EDF4",
+    "navigationBarTitleText": "小明写作业",
     "navigationBarTextStyle": "black",
     "enablePullDownRefresh":false
   }

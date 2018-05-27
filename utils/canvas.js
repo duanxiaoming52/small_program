@@ -45,10 +45,11 @@ export class Canvas{
     y = ctools.getX(y);
     radius = ctools.getX(radius);
     this.ctx.beginPath();
-    this.ctx.strokeStyle = color;
     this.ctx.fillStyle = color;
+    this.ctx.strokeStyle = "#000";
     this.ctx.arc(x, y, radius, 0, 2 * Math.PI);
     this.ctx.fill();
+    this.ctx.stroke();
     this.ctx.closePath();
   }
   moveTo(x, y) {
@@ -87,10 +88,11 @@ export class Canvas{
     this.ctx.fillStyle = color;
     this.ctx.fillRect(x, y, width, height)
   }
-  fillText(text, x, y, color = '#000') {
+  fillText(text, x, y, color = '#000', size=14) {
     x = ctools.getX(x);
     y = ctools.getX(y);
-    this.ctx.font = 'bold 12px sans-serif'
+    size = ctools.getX(size);
+    this.ctx.font = Math.round(size)+'px bold sans-serif'
     this.ctx.fillStyle = color;
     this.ctx.fillText(text, x, y);
   }

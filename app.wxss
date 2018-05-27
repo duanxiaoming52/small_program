@@ -2,7 +2,7 @@
 page{
   font-size: 24rpx;
   color: #666;
-  background-color: #f5f5f5;
+  background-color: #D7EDF4;
 }
 .clear{
   clear: both;
